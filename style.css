@@ -1,0 +1,33 @@
+body {
+	background: #f6f6f6;
+	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+	margin: 100px auto 0;
+	width: 800px;
+}
+
+#wrapper {
+	background: #fff;
+	float: left;
+	padding: 10px;
+	width: 780px;
+}
+
+	h1,h4 {
+		margin: 0;
+		text-align: center;
+	}
+	
+	h4 {
+		font-weight: normal;
+	}
+	
+	#clear {
+		clear: both;
+		height: 20px;
+		width: 100%;
+	}
+	
+	label, input, #mimic {
+		float: left;
+		margin-right: 5px;
+	}
