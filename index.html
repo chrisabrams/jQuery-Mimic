@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>jQuery Mimic</title>
+	<title>jQuery Mimic by Chris Abrams</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
-	<link rel="stylesheet" href="style.css" media="screen">
+	<link rel="stylesheet" href="css/style.css" media="screen">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 </head>
@@ -12,14 +12,28 @@
 <div id="wrapper">
 	<h1>jQuery Mimic</h1>
 	<h4>A jQuery plugin by Chris Abrams</h4>
+	<img id="logo" src="img/logo.jpg" alt="" />
+	
+	<a id="download" href="#">
+		<img src="img/download.png" alt="" />
+		<h3>Download</h3>
+		<span>Version 1.0.0</span>
+	</a>
 	
 	<div id="clear"></div>
 	
-	<label>My Input</label>
-	<input id="myinput" name="myinput" type="text" />
-	<div id="mimic"></div>
+	<div id="left">
+		<label>My Input</label>
+		<input id="myinput" name="myinput" type="text" />
+		<div id="mimic"></div>
+	</div>
+	
+	<div id="right">
+		<h2>About this plugin</h2>
+	</div>
+	
 </div>
-<script src="jquery.mimic.js"></script>
+<script src="js/jquery.mimic.js"></script>
 <script>
 $(document).ready(function() {
 	$("#myinput").mimic();
