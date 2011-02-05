@@ -2,27 +2,22 @@
 	$.fn.mimic = function(options) {	
 		
 		var defaults = {
-			mimic: '#mimic',
-			speed: 1000
+			delegate: '', //The container that houses the input that we will be mimiced
+			mimic: '',    //The element that will receive/show the mimic
+			regexp: false //Only use regular expressions such as converting " " to "-"
 		};
 		var options = $.extend(defaults, options);
 		
 		return this.each(function() {
-			var input = '#' + $(this).attr('id');
-
-			var typewatch = (function() {
-				var timer = 0;
-				return function(callback, ms) {
-					clearTimeout (timer);
-					timer = setTimeout(callback, ms);
-				}  
-			})();
+			var input = '#' + $(this).attr('id'); //Get the ID of the input the plugin was attached to
 			
-			$(input).keyup(function() {
-				typewatch(function () {
-			    	//
-			  	}, options.speed);
-			  	$(options.mimic).text($(input).val());
+			$(options.delegate).delegate(input, 'keyup', function() {
+			  	var value = $(this).val(); //Get the value of the input
+			  	if(options.regexp == true) { //Are regular expressions being used?
+			  		value = value.replace(new RegExp("\\s", "g"), "-"); //Replace all " " with "-"
+			  	}
+
+			  	$(options.mimic).text(value); //Send the value to the mimic element
 			});
 			
 		});

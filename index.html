@@ -6,7 +6,7 @@
 	
 	<link rel="stylesheet" href="css/style.css" media="screen">
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script src="js/jquery-1.5.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -30,13 +30,17 @@
 	
 	<div id="right">
 		<h2>About this plugin</h2>
-	</div>
-	
+	</div>	
 </div>
+
 <script src="js/jquery.mimic.js"></script>
 <script>
 $(document).ready(function() {
-	$("#myinput").mimic();
+	$("#myinput").mimic({
+		delegate: '#left',
+		mimic: '#mimic',
+		regexp: true
+	});
 });
 </script>
 </body>
